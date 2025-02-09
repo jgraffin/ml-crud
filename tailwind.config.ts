@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
 export default {
+  important: true,
   content: ['./src/**/*.{html,ts,css,scss}'],
   theme: {
     extend: {},
@@ -28,6 +28,26 @@ export default {
       'highlight-9': '#707070',
       'highlight-10': '#606060',
     },
+    colors: {
+      attention: {
+        10: '#fff9e6',
+        30: '#fee59b',
+        50: '#fdd150',
+        70: '#fcbe05',
+        90: '#ca9804',
+        110: '#977203',
+        130: '#654c02',
+      },
+      negative: {
+        10: '#fbebeb',
+        30: '#f0afaf',
+        50: '#e47272',
+        70: '#ef765e',
+        90: '#d93636',
+        110: '#8c2323',
+        130: '#661a1a',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "id": "8d682e03",
+            "thumb": "https://http2.mlstatic.com/D_NQ_NP_2X_928103-MLB79128302769_092024-F.webp",
+            "name": "MacBook Pro",
+            "price": 2000,
+            "status": "Available",
+            "color": "Space Gray",
+            "quantity": 4
+        },
+        {
+            "id": "8d682g12",
+            "thumb": "https://http2.mlstatic.com/D_NQ_NP_2X_952371-MLB80047260487_102024-F.webp",
+            "name": "MacBook Pro lala",
+            "price": 2000,
+            "status": "Available",
+            "color": "Space Gray",
+            "quantity": 2
+        }
+    ]
+}

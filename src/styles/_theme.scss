@@ -1,0 +1,9 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$empty-theme: mat.define-theme(());
+
+:root {
+  @include mat.all-component-themes($empty-theme);
+}
