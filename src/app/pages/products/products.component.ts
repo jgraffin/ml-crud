@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, NO_ERRORS_SCHEMA } from '@angular/core';
 
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../../services/abstract-product.service';
 import { ProductService } from '../../services/product.service';
@@ -29,13 +30,14 @@ export class ProductsComponent {
   products$!: Observable<Product[]>;
 
   private productService = inject(ProductService);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.products$ = this.productService.getAllProducts();
   }
 
   editProduct(event: Event) {
-    console.log('event', event);
+    this.router.navigate(['products/edit', event]);
   }
 
   deleteProduct(event: Event) {

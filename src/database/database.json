@@ -5,9 +5,18 @@
             "thumb": "https://http2.mlstatic.com/D_NQ_NP_2X_928103-MLB79128302769_092024-F.webp",
             "name": "MacBook Pro",
             "price": 2000,
-            "status": "Available",
-            "color": "Space Gray",
-            "quantity": 4
+            "status": "Out of Stock",
+            "color": "Silver",
+            "quantity": 4,
+            "paymentMethod": "cash",
+            "description": "Aliquam in ex pharetra, mollis odio nec, placerat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla velit nisl, convallis ac lorem at, ullamcorper ultricies nisl. Vivamus in elit tellus. Aliquam interdum mi magna, non molestie nulla convallis eu. Morbi at consectetur sapien, vitae lacinia justo. Morbi in nisi ultrices, fermentum libero vel, facilisis lacus. Fusce et consectetur enim, sed pellentesque arcu. Vestibulum sit amet rhoncus purus. Suspendisse elementum posuere vehicula.",
+            "characteristics": {
+                "memory": "16GB",
+                "screen": "13.3\"",
+                "batteryDuration": "10 h",
+                "resolution": "Full HD",
+                "touchableScreen": false
+            }
         },
         {
             "id": "8d682g12",
@@ -15,8 +24,51 @@
             "name": "MacBook Pro lala",
             "price": 2000,
             "status": "Available",
-            "color": "Space Gray",
-            "quantity": 2
+            "color": "Space Grey",
+            "quantity": 2,
+            "paymentMethod": "cash",
+            "description": "Aliquam in ex pharetra, mollis odio nec, placerat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla velit nisl, convallis ac lorem at, ullamcorper ultricies nisl. Vivamus in elit tellus. Aliquam interdum mi magna, non molestie nulla convallis eu. Morbi at consectetur sapien, vitae lacinia justo. Morbi in nisi ultrices, fermentum libero vel, facilisis lacus. Fusce et consectetur enim, sed pellentesque arcu. Vestibulum sit amet rhoncus purus. Suspendisse elementum posuere vehicula.",
+            "characteristics": {
+                "memory": "16GB",
+                "screen": "13.3\"",
+                "batteryDuration": "10 h",
+                "resolution": "Full HD",
+                "touchableScreen": false
+            }
+        },
+        {
+            "id": "1d682g12",
+            "thumb": "https://http2.mlstatic.com/D_NQ_NP_2X_952371-MLB80047260487_102024-F.webp",
+            "name": "MacBook Pro lala",
+            "price": 2000,
+            "color": "Midnight",
+            "quantity": 2,
+            "paymentMethod": "cash",
+            "description": "Aliquam in ex pharetra, mollis odio nec, placerat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla velit nisl, convallis ac lorem at, ullamcorper ultricies nisl. Vivamus in elit tellus. Aliquam interdum mi magna, non molestie nulla convallis eu. Morbi at consectetur sapien, vitae lacinia justo. Morbi in nisi ultrices, fermentum libero vel, facilisis lacus. Fusce et consectetur enim, sed pellentesque arcu. Vestibulum sit amet rhoncus purus. Suspendisse elementum posuere vehicula.",
+            "characteristics": {
+                "memory": "16GB",
+                "screen": "13.3\"",
+                "batteryDuration": "10 h",
+                "resolution": "Full HD",
+                "touchableScreen": false
+            }
+        },
+        {
+            "id": "6d682g12",
+            "thumb": "https://http2.mlstatic.com/D_NQ_NP_2X_952371-MLB80047260487_102024-F.webp",
+            "name": "MacBook Pro lala",
+            "price": 2000,
+            "color": "Starlight",
+            "quantity": 0,
+            "paymentMethod": "cash",
+            "description": "Aliquam in ex pharetra, mollis odio nec, placerat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla velit nisl, convallis ac lorem at, ullamcorper ultricies nisl. Vivamus in elit tellus. Aliquam interdum mi magna, non molestie nulla convallis eu. Morbi at consectetur sapien, vitae lacinia justo. Morbi in nisi ultrices, fermentum libero vel, facilisis lacus. Fusce et consectetur enim, sed pellentesque arcu. Vestibulum sit amet rhoncus purus. Suspendisse elementum posuere vehicula.",
+            "characteristics": {
+                "memory": "16GB",
+                "screen": "13.3\"",
+                "batteryDuration": "10 h",
+                "resolution": "Full HD",
+                "touchableScreen": false
+            }
         }
     ]
 }

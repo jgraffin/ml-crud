@@ -23,7 +23,7 @@ export class ProductService extends AbstractProductService {
     );
   }
 
-  getProductById(id: number): Observable<Product> {
+  getProductById(id: string): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
 
