@@ -27,6 +27,9 @@ export default {
       'highlight-8': '#808080',
       'highlight-9': '#707070',
       'highlight-10': '#606060',
+      success: '#05bc05',
+      attention: '#fff9e6',
+      negative: '#fbebeb',
     },
     colors: {
       attention: {
@@ -46,6 +49,15 @@ export default {
         90: '#d93636',
         110: '#8c2323',
         130: '#661a1a',
+      },
+      success: {
+        10: '#e6f9e6',
+        30: '#aaf0aa',
+        50: '#72e472',
+        70: '#05bc05',
+        90: '#049804',
+        110: '#037203',
+        130: '#024c02',
       },
     },
   },

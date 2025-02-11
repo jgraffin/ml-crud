@@ -12,7 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
+import { JsonPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxCurrencyDirective } from 'ngx-currency';
 import { Product } from '../../../services/abstract-product.service';
 
 @Component({
@@ -24,6 +26,8 @@ import { Product } from '../../../services/abstract-product.service';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
+    JsonPipe,
+    NgxCurrencyDirective,
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
@@ -81,16 +85,21 @@ export class FormComponent implements OnInit {
       description: filledForm.description,
     });
 
+    console.log('filledForm', filledForm.characteristics?.screen);
+
     this.formData.get('characteristics')?.patchValue({
       memory: filledForm.characteristics?.memory || null,
       screen: filledForm.characteristics?.screen || null,
       batteryDuration: filledForm.characteristics?.batteryDuration || null,
       resolution: filledForm.characteristics?.resolution || null,
-      touchableScreen: filledForm.characteristics?.touchableScreen || null,
+      touchableScreen:
+        String(filledForm.characteristics?.touchableScreen) || null,
     });
   }
 
   closeForm() {
     history.back();
   }
+
+  submitForm() {}
 }

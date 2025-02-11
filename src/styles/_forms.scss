@@ -1,3 +1,18 @@
 // custom text field
+
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
+  border-right-width: 0px !important;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined {
+  border-right-width: 1px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.mat-mdc-form-field-infix {
+  input {
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
 }
