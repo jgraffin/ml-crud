@@ -31,7 +31,7 @@ export class TableComponent {
     this.handleEdit.emit(id);
   }
 
-  deleteProduct(id: string) {
-    this.handleDelete.emit(id);
+  deleteProduct(product: Product) {
+    this.handleDelete.emit(product);
   }
 }

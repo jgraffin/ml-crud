@@ -6,8 +6,14 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -15,7 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { JsonPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxCurrencyDirective } from 'ngx-currency';
+import { EditDialogComponent } from '../../../components/dialogs/edit-dialog/edit-dialog.component';
 import { Product } from '../../../services/abstract-product.service';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-form',
@@ -40,16 +48,19 @@ export class FormComponent implements OnInit {
 
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private productService: ProductService,
+    private dialog: MatDialog
+  ) {
     this.formData = this.fb.group({
-      id: [null],
-      name: [null],
-      thumb: [null],
-      price: [null],
-      status: [null],
-      color: [null],
+      id: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      thumb: [null, [Validators.required]],
+      price: [null, [Validators.required]],
+      color: [null, [Validators.required]],
       quantity: [null],
-      description: [null],
+      description: [null, [Validators.required]],
     });
   }
 
@@ -85,8 +96,6 @@ export class FormComponent implements OnInit {
       description: filledForm.description,
     });
 
-    console.log('filledForm', filledForm.characteristics?.screen);
-
     this.formData.get('characteristics')?.patchValue({
       memory: filledForm.characteristics?.memory || null,
       screen: filledForm.characteristics?.screen || null,
@@ -101,5 +110,43 @@ export class FormComponent implements OnInit {
     history.back();
   }
 
-  submitForm() {}
+  scrollToTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  submitForm() {
+    if (!this.formData.valid) {
+      console.log('formData', this.formData.value);
+      this.scrollToTop();
+      return;
+    }
+
+    let formData: any = this.filledForm
+      ? { ...this.filledForm, ...this.formData.value }
+      : this.formData.value;
+
+    this.sendData(formData);
+  }
+
+  sendData(formData: any) {
+    this.productService.updateProduct(formData.id, formData).subscribe(() => {
+      const dialogRef = this.creationDialog();
+      dialogRef.afterClosed().subscribe(() => {
+        this.closeForm();
+      });
+    });
+  }
+
+  creationDialog() {
+    return this.dialog.open(EditDialogComponent, {
+      panelClass: 'custom-dialog',
+      data: {
+        message: 'Produto editado com sucesso!',
+      },
+    });
+  }
 }

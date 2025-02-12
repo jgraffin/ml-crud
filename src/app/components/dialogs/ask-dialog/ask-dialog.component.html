@@ -1,0 +1,29 @@
+<div class="dialog-header">
+  <h1
+    class="flex w-full text-size-small text-attention-70 font-extrabold items-center gap-2"
+  >
+    <mat-icon class="text-attention-70 text-size-small"
+      >check_circle_outline</mat-icon
+    >
+    <span>Exclusão</span>
+  </h1>
+</div>
+<div class="dialog-content">
+  <p class="block w-full text-size-smaller text-left">{{ data.message }}</p>
+</div>
+<div class="dialog-footer">
+  <button
+    mat-stroked-button
+    class="border bg-highlight-2 rounded-lg px-4 py-2"
+    (click)="onDismiss()"
+  >
+    Cancelar
+  </button>
+  <button
+    mat-stroked-button
+    class="border bg-highlight-2 rounded-lg px-4 py-2"
+    (click)="onProceed(id)"
+  >
+    Excluir
+  </button>
+</div>
