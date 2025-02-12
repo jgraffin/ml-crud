@@ -1,23 +1,26 @@
 <table mat-table [dataSource]="data">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>#</th>
-    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    <td mat-cell *matCellDef="let element">
+      <span>{{ element.quantity === 0 ? "🔴" : "🟢" }}</span>
+      {{ element.id }}
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="thumb">
-    <th mat-header-cell *matHeaderCellDef>Photo</th>
+    <th mat-header-cell *matHeaderCellDef>Foto</th>
     <td mat-cell *matCellDef="let element">
       <img class="w-8 h-8" src="{{ element.thumb }}" alt="{{ element.name }}" />
     </td>
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
     <td mat-cell *matCellDef="let element">{{ element.name }}</td>
   </ng-container>
 
   <ng-container matColumnDef="price">
-    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <th mat-header-cell *matHeaderCellDef>Preço</th>
     <td mat-cell *matCellDef="let element">{{ element.price }}</td>
   </ng-container>
 
@@ -29,17 +32,17 @@
   </ng-container>
 
   <ng-container matColumnDef="color">
-    <th mat-header-cell *matHeaderCellDef>Color</th>
+    <th mat-header-cell *matHeaderCellDef>Cor</th>
     <td mat-cell *matCellDef="let element">{{ element.color }}</td>
   </ng-container>
 
   <ng-container matColumnDef="quantity">
-    <th mat-header-cell *matHeaderCellDef>Quantity</th>
+    <th mat-header-cell *matHeaderCellDef>Quantidade</th>
     <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
   </ng-container>
 
   <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
     <td mat-cell *matCellDef="let element">
       <span class="flex gap-2">
         <button

@@ -45,6 +45,10 @@ export class ProductsComponent {
     this.router.navigate(['products/edit', event]);
   }
 
+  createProduct() {
+    this.router.navigate(['products/create']);
+  }
+
   deleteProduct(event: any) {
     const dialogRef = this.askDialog(event);
     dialogRef.afterClosed().subscribe((value) => {

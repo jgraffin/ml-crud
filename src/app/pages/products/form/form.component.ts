@@ -54,13 +54,20 @@ export class FormComponent implements OnInit {
     private dialog: MatDialog
   ) {
     this.formData = this.fb.group({
-      id: [null, [Validators.required]],
+      id: [null],
       name: [null, [Validators.required]],
-      thumb: [null, [Validators.required]],
+      thumb: [null],
       price: [null, [Validators.required]],
       color: [null, [Validators.required]],
       quantity: [null],
       description: [null, [Validators.required]],
+      characteristics: this.fb.group({
+        memory: [null],
+        screen: [null],
+        batteryDuration: [null],
+        resolution: [null],
+        touchableScreen: [null],
+      }),
     });
   }
 
@@ -125,27 +132,40 @@ export class FormComponent implements OnInit {
       return;
     }
 
+    const isUpdate = !!this.filledForm;
+
     let formData: any = this.filledForm
       ? { ...this.filledForm, ...this.formData.value }
       : this.formData.value;
 
-    this.sendData(formData);
+    this.sendData(formData, isUpdate);
   }
 
-  sendData(formData: any) {
-    this.productService.updateProduct(formData.id, formData).subscribe(() => {
-      const dialogRef = this.creationDialog();
-      dialogRef.afterClosed().subscribe(() => {
-        this.closeForm();
+  sendData(formData: any, isUpdate: boolean) {
+    if (isUpdate) {
+      this.productService.updateProduct(formData.id, formData).subscribe(() => {
+        const dialogRef = this.creationDialog(isUpdate);
+        dialogRef.afterClosed().subscribe(() => {
+          this.closeForm();
+        });
       });
-    });
+    } else {
+      this.productService.createProduct(formData).subscribe(() => {
+        const dialogRef = this.creationDialog(isUpdate);
+        dialogRef.afterClosed().subscribe(() => {
+          this.closeForm();
+        });
+      });
+    }
   }
 
-  creationDialog() {
+  creationDialog(isUpdate: boolean) {
     return this.dialog.open(EditDialogComponent, {
       panelClass: 'custom-dialog',
       data: {
-        message: 'Produto editado com sucesso!',
+        message: isUpdate
+          ? 'Produto editado com sucesso!'
+          : 'Produto criado com sucesso!',
       },
     });
   }

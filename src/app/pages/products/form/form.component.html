@@ -10,7 +10,7 @@
     <mat-icon class="text-size-medium">chevron_left</mat-icon>
   </button>
 
-  {{ formData.get("id") ? "Alterar Produto" : "Adicionar Produto" }}
+  {{ formData.get("id")?.value ? "Alterar Produto" : "Adicionar Produto" }}
 </h1>
 
 <form [formGroup]="formData">
@@ -129,7 +129,7 @@
       [disabled]="!formData.valid"
       (click)="submitForm()"
     >
-      {{ formData.get("id") ? "Atualizar" : "Salvar Produto" }}
+      {{ formData.get("id")?.value ? "Atualizar" : "Salvar Produto" }}
     </button>
   </div>
 </form>

@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { EditComponent } from './edit/edit.component';
+import { FormComponent } from './form/form.component';
 import { ProductsComponent } from './products.component';
 
 export const productsRoutes: Routes = [
@@ -10,5 +11,9 @@ export const productsRoutes: Routes = [
   {
     path: 'products/edit/:id',
     component: EditComponent,
+  },
+  {
+    path: 'products/create',
+    component: FormComponent,
   },
 ];
